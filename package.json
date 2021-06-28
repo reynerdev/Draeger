@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@material-ui/core": "^4.11.4",
+    "@material-ui/data-grid": "^4.0.0-alpha.32",
     "@material-ui/icons": "^4.11.2",
     "next": "11.0.1",
     "polished": "^4.1.3",

@@ -5,12 +5,14 @@ import styled from 'styled-components';
 const MainButton = (props) => {
   console.log(props, 'Console Log Props');
   return (
-    <Main>
+    <Main background={props.background} textColor={props.textColor}>
       <MainWrapper>
         <Logo>
-          <AssignmentIcon style={{ color: 'blue', fontSize: '55px' }} />
+          <AssignmentIcon
+            style={{ color: props.iconColor, fontSize: '55px' }}
+          />
         </Logo>
-        <ButtonTitle>LLamadas</ButtonTitle>
+        <ButtonTitle textColor={props.textColor}>LLamadas</ButtonTitle>
       </MainWrapper>
     </Main>
   );
@@ -18,22 +20,22 @@ const MainButton = (props) => {
 
 export default MainButton;
 
-// const backgroundColor = (props) => {
-//   const background = props.background;
-//   if (background) {
-//     return 'white';
-//   }
-//   if (background === 'white') {
-//     return 'white';
-//   } else {
-//     return background;
-//   }
-// };
+const backgroundColor = (props) => {
+  const background = props.background;
+  if (background) {
+    return 'white';
+  }
+  if (background === 'white') {
+    return 'white';
+  } else {
+    return background;
+  }
+};
 
 const Main = styled.button`
   padding: 10px 36px;
   border-radius: 10px;
-  background-color: ${(props) => console.log(props, 'wuju')};
+  background-color: ${(props) => props.background};
   ${'' /* background-color:${(props) => console.log(props)}  */}
   border: none;
   ${
@@ -61,10 +63,7 @@ const Logo = styled.div`
 `;
 
 const ButtonTitle = styled.div`
-  ${
-    '' /* color: ${(props) =>
-    props.background === 'white' || props.background ? '#fff' : neutral[700]}; */
-  }
+  color: ${(props) => props.textColor};
   font-size: ${typeScale.paragraph};
   font-weight: bold;
   display: flex;
