@@ -1,8 +1,11 @@
 import React from 'react';
 import { typeScale } from '../../utils/typography';
 import styled from 'styled-components';
-import { InputLabel, Input, FormHelperText } from '@material-ui/core';
+import InputLabel from '@material-ui/core/InputLabel';
 import FormControl from '@material-ui/core/FormControl';
+import OutlinedInput from '@material-ui/core/OutlinedInput';
+import { PrimaryButton } from '../Button';
+
 const Form = () => {
   return (
     <div style={{ overflow: 'hidden' }}>
@@ -20,12 +23,37 @@ const Form = () => {
           </h1>
           <FormsContainer style={{ width: '100%' }}>
             <AuthContent>
-              <FormControl variant="outlined" fullWidth>
-                <InputLabel htmlFor="email"> Email</InputLabel>
-                <Input variant="outlined" id="email" type="email">
-                  Email
-                </Input>
+              {/* <FormControl variant="outlined">
+                <InputLabel>Email</InputLabel>
+                <OutlinedInput id="email" type="email" label="Email" />
               </FormControl>
+              <FormControl variant="outlined">
+                <InputLabel htmlFor="campoName">Name</InputLabel>
+                <OutlinedInput id="component-outlined" label="Name" />
+              </FormControl>
+              <FormControl variant="outlined">
+                <InputLabel htmlFor="campoPrueba">Prueba</InputLabel>
+                <OutlinedInput id="component-outlined" label="Prueba" />
+              </FormControl> */}
+              <FormPart>
+                <FormControl variant="outlined">
+                  <InputLabel htmlFor="email">Correo electronico</InputLabel>
+                  <OutlinedInput
+                    id="outlined"
+                    label="Correo electronico"
+                    type="email"
+                  />
+                </FormControl>
+                <FormControl variant="outlined">
+                  <InputLabel htmlFor="password">Contraseña</InputLabel>
+                  <OutlinedInput
+                    id="outlined"
+                    label="Contraseña "
+                    type={'password'}
+                  />
+                </FormControl>
+                <PrimaryButton>Iniciar sesion</PrimaryButton>
+              </FormPart>
             </AuthContent>
           </FormsContainer>
         </AuthContainer>
@@ -37,9 +65,10 @@ const Form = () => {
 export default Form;
 
 const FormWrapper = styled.div`
-  padding: 0px 5rem;
+  padding: 0px 1rem;
   margin: 0px auto;
   max-width: 320px;
+  // background-color: peru;
 `;
 
 const AuthContainer = styled.div`
@@ -50,6 +79,7 @@ const AuthContainer = styled.div`
   min-height: 100vh;
   padding-top: 24px;
   padding-bottom: 90px;
+  align-content: center;
 `;
 
 const FormsContainer = styled.div`
@@ -58,4 +88,9 @@ const FormsContainer = styled.div`
 
 const AuthContent = styled.div`
   width: 100%;
+`;
+
+const FormPart = styled.form`
+  display: grid;
+  row-gap: 16px;
 `;
