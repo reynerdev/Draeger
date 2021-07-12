@@ -1,16 +1,20 @@
 import React from 'react';
-import { typeScale } from '../../utils/typography';
+import { typeScale, primaryBlue } from '../../utils';
 import styled from 'styled-components';
 import InputLabel from '@material-ui/core/InputLabel';
 import FormControl from '@material-ui/core/FormControl';
 import OutlinedInput from '@material-ui/core/OutlinedInput';
-import { PrimaryButton } from '../Button';
-
+import { PrimaryButton, TertiaryButton } from '../Button';
 const Form = () => {
   return (
     <div style={{ overflow: 'hidden' }}>
       <FormWrapper>
         <AuthContainer>
+          <img
+            width="100%"
+            src="/images/technologyforlife.png"
+            alt="technologyforlife"
+          />
           <h1
             style={{
               fontSize: typeScale.header2,
@@ -56,6 +60,7 @@ const Form = () => {
               </FormPart>
             </AuthContent>
           </FormsContainer>
+          <TertiaryButton>Olvide mi contraseña</TertiaryButton>
         </AuthContainer>
       </FormWrapper>
     </div>
@@ -69,6 +74,7 @@ const FormWrapper = styled.div`
   margin: 0px auto;
   max-width: 320px;
   // background-color: peru;
+  // background-image: url('/images/backgroundloginform.webp');
 `;
 
 const AuthContainer = styled.div`

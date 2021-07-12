@@ -17,3 +17,11 @@ export const PrimaryButton = styled(Button)`
   padding: 0.5rem 1rem;
   color: ${neutral[100]};
 `;
+
+export const TertiaryButton = styled(Button)`
+  background: none;
+  color: ${primaryBlue[500]};
+  font-weight: 700;
+`;
+
+export const ServiceButton = styled(Button)``;
