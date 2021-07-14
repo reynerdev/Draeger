@@ -32,7 +32,11 @@ const Header = () => {
           <ServiciosButton bgcolor={secondary.orange}>
             <AddIcon style={{ fontSize: 32, color: neutral[100] }} />
           </ServiciosButton>
-          <div>Agregar</div>
+          <div
+            style={{ color: neutral[700], fontWeight: '700', fontSize: '18px' }}
+          >
+            Agregar
+          </div>
         </ButtonWrapper>
         <ReportSelectorWrapper>Selector </ReportSelectorWrapper>
       </RightWrapper>
