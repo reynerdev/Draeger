@@ -25,7 +25,12 @@ import Typography from '@material-ui/core/Typography';
 // }));
 
 function getSteps() {
-  return ['Select campaign settings', 'Create an ad group', 'Create an ad'];
+  return [
+    'Informacion del Cliente',
+    'Ingreso Equipos',
+    'Generar PMS',
+    'Emitir Documentos',
+  ];
 }
 
 function getStepContent(step) {
@@ -138,10 +143,12 @@ const StepperComponent = () => {
         {steps.map((label, index) => {
           const stepProps = {};
           const buttonProps = {};
-          if (isStepOptional(index)) {
+          {
+            /* if (isStepOptional(index)) {
             buttonProps.optional = (
               <Typography variant="caption">Optional</Typography>
             );
+          } */
           }
           if (isStepSkipped(index)) {
             stepProps.completed = false;

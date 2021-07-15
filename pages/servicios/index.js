@@ -5,6 +5,7 @@ import Servicios from '../../components/Servicios/Servicios';
 import Header from '../../components/Servicios/Header';
 import { ContainerLayout } from '../../components/layout';
 import StepperComponent from '../../components/Servicios/StepperComponent';
+import MainContent from '../../components/Servicios/MainContent';
 const index = () => {
   return (
     <PrincipalLayout>
@@ -12,6 +13,7 @@ const index = () => {
       <ContainerLayout>
         <Header />
         <StepperComponent />
+        <MainContent />
       </ContainerLayout>
     </PrincipalLayout>
   );
